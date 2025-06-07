@@ -44,3 +44,48 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started. All contr
 ## 📝 License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).
+
+## 🔧 Automação com Just (`justfile`)
+
+Este projeto utiliza [`just`](https://github.com/casey/just) para simplificar tarefas comuns de desenvolvimento. O `justfile` funciona como um script multiplataforma e facilita comandos como build, teste e lint.
+
+### 📦 Instalação do `just`
+
+Se você já tem o Rust instalado:
+
+```bash
+cargo install just
+```
+
+Alternativas:
+
+- macOS: `brew install just`
+- Windows: `choco install just` ou `cargo install just`
+- Linux: use `cargo` ou baixe o binário na [página do projeto](https://github.com/casey/just)
+
+---
+
+### 🚀 Comandos disponíveis
+
+Após instalar, você pode usar os seguintes comandos:
+
+```bash
+just             # Roda build, test e clippy
+just build       # Compila o projeto (cargo build)
+just test        # Roda os testes
+just clippy      # Linter (com falha se houver warning)
+just fmt         # Formata o código-fonte
+just check       # Verifica o código sem compilar
+```
+
+---
+
+### 💡 Dica
+
+Você também pode rodar apenas:
+
+```bash
+just
+```
+
+Isso executa a tarefa padrão (`default`), que inclui `build`, `test` e `clippy`.
