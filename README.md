@@ -1,4 +1,7 @@
-## Hi there 👋
+# QuantBR
+
+**Trade at the Speed of Rust**  
+*Open, Modular, Uncompromising Performance.*
 
 <!--
 **quantbr/quantbr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
