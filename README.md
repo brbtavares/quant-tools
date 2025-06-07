@@ -1,4 +1,4 @@
-# QuantBR
+# Quantbr
 
 **Trade at the Speed of Rust**  
 *Open, Modular, Uncompromising Performance.*
