@@ -1,1 +1,4 @@
 *.yml text eol=lf
+# Force Unix-style line endings for shell scripts and husky hooks
+*.sh    eol=lf
+.husky/* eol=lf

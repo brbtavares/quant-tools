@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+# Este bloco abaixo tenta adicionar os caminhos mais comuns do Node.js/npm ao PATH.
+# Ele é útil principalmente no Windows (via Git Bash) para garantir que 'node' e 'npx'
+# sejam encontrados, já que o PATH do ambiente do hook pode ser limitado.
+# Em sistemas Unix-like (macOS/Linux), estas linhas geralmente são inofensivas.
+
+# Tenta encontrar a pasta de módulos globais do npm e adicioná-la ao PATH.
+# Isso é crucial para 'npx' encontrar executáveis globais ou se 'node' não está no PATH.
+NPM_GLOBAL_BIN_PATH=$(npm root -g 2>/dev/null | xargs dirname)
+if [ -d "$NPM_GLOBAL_BIN_PATH" ]; then
+  export PATH="$PATH:$NPM_GLOBAL_BIN_PATH"
+fi
+
+# Adiciona o diretório de instalação padrão do Node.js ao PATH, se existir.
+# Útil se o 'node' em si não estiver no PATH.
+if [ -d "/c/Program Files/nodejs" ]; then # Caminho comum no Windows (para Git Bash)
+  export PATH="$PATH:/c/Program Files/nodejs"
+fi
+if [ -d "/usr/local/bin" ]; then # Caminho comum no macOS/Linux
+  export PATH="$PATH:/usr/local/bin"
+fi
+# Outros caminhos de instalação de Node.js podem ser adicionados aqui se necessário
+
+# --- FIM da configuração do PATH ---
+
+# Comando para rodar o commitlint com a mensagem de commit
+npx --no-install commitlint --edit "$1"

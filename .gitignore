@@ -24,5 +24,13 @@ target/
 
 # Additional files to ignore in the root of the repository
 desktop.ini
-.gitignore
 /docs/book/
+# Node.js
+node_modules/
+.env
+dist/
+.cache/
+npm-debug.log*
+
+# Husky
+.husky/_/
