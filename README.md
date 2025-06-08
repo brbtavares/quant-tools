@@ -12,6 +12,9 @@
   <a href="https://github.com/quantbr/quantbr-core/actions/workflows/clippy.yml">
     <img src="https://github.com/quantbr/quantbr-core/actions/workflows/clippy.yml/badge.svg" alt="Clippy Linter">
   </a>
+  <a href="https://quantbr.github.io/quantbr-core">
+    <img src="https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square" alt="Docs">
+  </a>
 </p>
 
 ---
