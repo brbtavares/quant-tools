@@ -1,18 +1,18 @@
 name: Clippy Linter
 
 on:
-push:
-  branches: [master]
+  push:
+    branches: [master]
   pull_request:
     branches: [master]
 
 jobs:
   clippy:
-  strategy:
-    matrix:
-      os: [ubuntu-latest, windows-latest]
-      runs-on: ${{ matrix.os }}
-      runs-on: ubuntu-latest
+    name: Clippy on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
