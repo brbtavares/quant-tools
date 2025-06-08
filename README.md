@@ -18,15 +18,19 @@
 
 ## 🚀 About the Project
 
-Quantbr Core is the high-performance engine behind the Quantbr trading platform — built in Rust with modularity, speed and flexibility in mind. Designed for professional and institutional use, but open for everyone.
+**Quantbr Core** is the high-performance engine behind the Quantbr trading platform — written in Rust with modularity, speed, and flexibility in mind. Designed for professional and institutional use, but open to the community.
+
+---
 
 ## 🧱 Features
 
 - ⚡ High-performance core in Rust
-- 🧩 Modular design (data ingestion, execution, analytics, UI integration)
-- 🔌 Easy integration with exchanges (via WebSocket, REST, FIX)
-- 📊 Future-ready for backtesting, visualization, and real-time analytics
-- 🧑‍💻 Open-source and community-driven
+- 🧩 Modular architecture (execution, analytics, integration)
+- 🔌 Pluggable connectivity (WebSocket, REST, FIX, etc.)
+- 📊 Ready for backtesting, visualization, and live analytics
+- 🧑‍💻 Open-source, community-driven, and extensible
+
+---
 
 ## 📦 Getting Started
 
@@ -37,55 +41,113 @@ cargo build
 cargo test
 ```
 
-## 🤝 Contributing
+---
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started. All contributions are welcome!
+## 🔧 Development with Just (`justfile`)
 
-## 📝 License
+This project uses [`just`](https://github.com/casey/just) to streamline common development tasks.
 
-This project is licensed under the [Apache 2.0 License](LICENSE).
+### 📦 Installing `just`
 
-## 🔧 Automação com Just (`justfile`)
-
-Este projeto utiliza [`just`](https://github.com/casey/just) para simplificar tarefas comuns de desenvolvimento. O `justfile` funciona como um script multiplataforma e facilita comandos como build, teste e lint.
-
-### 📦 Instalação do `just`
-
-Se você já tem o Rust instalado:
+If you already have Rust:
 
 ```bash
 cargo install just
 ```
 
-Alternativas:
+Or use a package manager:
 
 - macOS: `brew install just`
-- Windows: `choco install just` ou `cargo install just`
-- Linux: use `cargo` ou baixe o binário na [página do projeto](https://github.com/casey/just)
+- Windows: `choco install just` or `cargo install just`
+- Linux: via `cargo` or from the [releases page](https://github.com/casey/just)
 
----
-
-### 🚀 Comandos disponíveis
-
-Após instalar, você pode usar os seguintes comandos:
+### 🚀 Available Commands
 
 ```bash
-just             # Roda build, test e clippy
-just build       # Compila o projeto (cargo build)
-just test        # Roda os testes
-just clippy      # Linter (com falha se houver warning)
-just fmt         # Formata o código-fonte
-just check       # Verifica o código sem compilar
+just             # Runs build, test, clippy
+just build       # Builds the project
+just test        # Runs all tests
+just clippy      # Runs linter (fails on warnings)
+just fmt         # Formats the code
+just check       # Checks code without compiling
 ```
 
----
-
-### 💡 Dica
-
-Você também pode rodar apenas:
+💡 You can simply run:
 
 ```bash
 just
 ```
 
-Isso executa a tarefa padrão (`default`), que inclui `build`, `test` e `clippy`.
+This will run the default task: `build`, `test`, and `clippy`.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+1. Fork the repo and clone your fork.
+2. Create a branch: `git checkout -b feat/your-feature`
+3. Use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format.
+4. Push and open a Pull Request (PR) to `master`.
+
+### ✅ Requirements
+
+- Code must build on Linux and Windows (verified via GitHub Actions)
+- Run `just fmt && just clippy` before opening a PR
+
+---
+
+## ✍️ Commit Message Format
+
+We follow **Conventional Commits**.
+
+**Format:**
+
+```bash
+<type>(optional-scope): short description
+```
+
+**Common Types:**
+
+| Type     | Description                                    |
+| -------- | ---------------------------------------------- |
+| feat     | New feature                                    |
+| fix      | Bug fix                                        |
+| docs     | Documentation updates                          |
+| style    | Code style changes                             |
+| refactor | Code changes that neither fix nor add features |
+| test     | Adding or updating tests                       |
+| chore    | Build process, tooling, or dependencies        |
+| ci       | CI/CD workflow changes                         |
+
+**Examples:**
+
+```bash
+feat: add WebSocket connector for Binance
+fix(orderbook): fix price level merge bug
+docs: update README instructions
+ci(clippy): add Clippy static analysis
+```
+
+---
+
+## 💬 Questions or Ideas?
+
+Open a [Discussion](https://github.com/quantbr/quantbr-core/discussions) or [Issue](https://github.com/quantbr/quantbr-core/issues).
+
+---
+
+## 📜 Code of Conduct
+
+We follow the [Contributor Covenant](https://www.contributor-covenant.org) v2.1.
+
+To foster an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project harassment-free for everyone.
+
+For any issues, contact: [admin@quantbr.com]
+
+---
+
+## 📝 License
+
+Licensed under the [Apache 2.0 License](LICENSE).
