@@ -1,15 +1,23 @@
-default: just dev
+# prettier-ignore
+default:
+  just dev
 
-build: cargo build
+build:
+  cargo build
 
-test: cargo test
+test:
+  cargo test
 
-clippy: cargo clippy --all-targets -- -D warnings
+clippy:
+  cargo clippy --all-targets -- -D warnings
 
-fmt: cargo fmt --all
+fmt:
+  cargo fmt --all
 
-check: cargo check
+check:
+  cargo check
 
-dev: just build
-  just test
-  just clippy
+dev:
+  cargo check --all-targets
+  cargo test --workspace
+  cargo clippy --all-targets -- -D warnings
