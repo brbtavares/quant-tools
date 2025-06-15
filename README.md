@@ -2,17 +2,17 @@
   <img src="assets/logo.png" alt="Quantbr logo" width="200"/>
 </p>
 
-<h1 align="center">Quantbr Core</h1>
-<p align="center"><em>Trade at the Speed of Rust — Open, Modular, Uncompromising Performance.</em></p>
+<h1 align="center">quantbr — Open-Source Quantitative Finance Tools in Rust.</h1>
+<p align="center"><em>.Technical indicators, time series models, and risk metrics for algorithmic trading and portfolio analytics.</em></p>
 
 <p align="center">
-  <a href="https://github.com/quantbr/quantbr-core/actions/workflows/ci.yml">
-    <img src="https://github.com/quantbr/quantbr-core/actions/workflows/ci.yml/badge.svg" alt="Rust CI">
+  <a href="https://github.com/quantbr/quantbr/actions/workflows/ci.yml">
+    <img src="https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg" alt="Rust CI">
   </a>
-  <a href="https://github.com/quantbr/quantbr-core/actions/workflows/clippy.yml">
-    <img src="https://github.com/quantbr/quantbr-core/actions/workflows/clippy.yml/badge.svg" alt="Clippy Linter">
+  <a href="https://github.com/quantbr/quantbr/actions/workflows/clippy.yml">
+    <img src="https://github.com/quantbr/quantbr/actions/workflows/clippy.yml/badge.svg" alt="Clippy Linter">
   </a>
-  <a href="https://quantbr.github.io/quantbr-core">
+  <a href="https://quantbr.github.io/quantbr">
     <img src="https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square" alt="Docs">
   </a>
 </p>
@@ -21,27 +21,39 @@
 
 ## 🚀 About the Project
 
-**Quantbr Core** is the high-performance engine behind the Quantbr trading platform — written in Rust with modularity, speed, and flexibility in mind. Designed for professional and institutional use, but open to the community.
+*quantbr** is a Rust library providing tools for quantitative finance.  
+It includes technical indicators, statistical models for time series analysis, and risk metrics — designed for use in trading strategies, portfolio analytics, and research.
 
 ---
 
 ## 🧱 Features
 
-- ⚡ High-performance core in Rust
-- 🧩 Modular architecture (execution, analytics, integration)
-- 🔌 Pluggable connectivity (WebSocket, REST, FIX, etc.)
-- 📊 Ready for backtesting, visualization, and live analytics
-- 🧑‍💻 Open-source, community-driven, and extensible
+- 📈 Technical indicators (e.g. RSI, MACD, EMA, Bollinger Bands)
+- 📊 Time series models (e.g. ARIMA, GARCH, Kalman Filter)
+- ⚖️ Risk metrics (e.g. VaR, CVaR, Sharpe, Sortino, drawdown)
+- 🧑‍💻 Written in Rust for performance and safety
+- 🔌 Easy integration into trading engines and analytics platforms
 
 ---
 
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/quantbr/quantbr-core.git
-cd quantbr-core
+git clone https://github.com/quantbr/quantbr.git
+cd quantbr
 cargo build
 cargo test
+```
+
+---
+
+## ✨ Example
+
+```rust
+use quantbr::indicators::rsi;
+let data = vec![45.0, 46.0, 44.5, 47.0, 48.0];
+let rsi_val = rsi(&data, 14);
+println!("RSI: {:?}", rsi_val);
 ```
 
 ---
@@ -87,7 +99,7 @@ This will run the default task: `build`, `test`, and `clippy`.
 
 ## 🤝 Contributing
 
-We welcome contributions!
+We welcome contributions! Add new indicators, models, or enhancements. Please follow Conventional Commits.
 
 1. Fork the repo and clone your fork.
 2. Create a branch: `git checkout -b feat/your-feature`
@@ -137,7 +149,7 @@ ci(clippy): add Clippy static analysis
 
 ## 💬 Questions or Ideas?
 
-Open a [Discussion](https://github.com/quantbr/quantbr-core/discussions) or [Issue](https://github.com/quantbr/quantbr-core/issues).
+Open a [Discussion](https://github.com/quantbr/quantbr/discussions) or [Issue](https://github.com/quantbr/quantbr/issues).
 
 ---
 
