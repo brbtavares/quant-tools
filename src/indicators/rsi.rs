@@ -1,15 +1,15 @@
 // This file implements the Relative Strength Index (RSI) indicator.
 
 pub struct RSI {
-    period: usize,
     values: Vec<f64>,
+    period: usize,
 }
 
 impl RSI {
     pub fn new(period: usize) -> Self {
         Self {
-            period,
             values: Vec::new(),
+            period,            
         }
     }
 
