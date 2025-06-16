@@ -1,6 +1,10 @@
 <h1 align="center">quantbr — Open-Source Quantitative Finance Tools in Rust.</h1>
 
 <p align="center">
+
+<a href="https://quantbr.com" target="_blank">
+  <img src="https://img.shields.io/badge/docs-online-blue" alt="Docs">
+</a>
   <a href="https://github.com/quantbr/quantbr/actions/workflows/ci.yml">
     <img src="https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg" alt="Rust CI">
   </a>
@@ -45,7 +49,7 @@ Market Microstructure Analysis (order book modeling, slippage, transaction cost 
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/quantbr/quantbr.git
+git clone https://github.com/brbtavares/quantbr.git
 cd quantbr
 cargo build
 cargo test
