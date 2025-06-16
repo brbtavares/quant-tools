@@ -3,13 +3,14 @@ name: Deploy Rust Docs
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout main branch
+      - name: Checkout master branch
         uses: actions/checkout@v4
 
       - name: Install Rust
@@ -19,11 +20,11 @@ jobs:
           profile: minimal
           override: true
 
-      - name: Build documentation
+      - name: Build Rust documentation
         run: cargo doc --no-deps --workspace
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/doc
+          publish_dir: ./target/doc/quantbr
