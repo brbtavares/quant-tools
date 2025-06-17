@@ -25,13 +25,13 @@ jobs:
 
       - name: Prepare doc output
         run: |
-          rm -rf ./target/doc/*
-          cp -r ./target/doc/quantbr/* ./target/doc/
+          mkdir -p ./doc_publish
+          cp -r ./target/doc/quantbr/* ./doc_publish/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/doc
+          publish_dir: ./doc_publish
           publish_branch: gh-pages
           force_orphan: true
