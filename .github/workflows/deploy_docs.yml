@@ -21,12 +21,17 @@ jobs:
           override: true
 
       - name: Build Rust documentation
-        run: cargo doc --no-deps --workspace
+        run: cargo doc --no-deps -p quantbr
+
+      - name: Prepare doc output
+        run: |
+          rm -rf ./target/doc/*
+          cp -r ./target/doc/quantbr/* ./target/doc/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/doc/quantbr
+          publish_dir: ./target/doc
           publish_branch: gh-pages
           force_orphan: true
