@@ -35,3 +35,4 @@ jobs:
           publish_dir: ./doc_publish
           publish_branch: gh-pages
           force_orphan: true
+          cname: quantbr.com
