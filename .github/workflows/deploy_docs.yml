@@ -23,10 +23,16 @@ jobs:
       - name: Build Rust documentation
         run: cargo doc --no-deps -p quantbr
 
-      - name: Prepare doc output
+       - name: Prepare doc output
         run: |
+          # Remove arquivos ou pastas indesejadas do output do Rustdoc
+          rm -rf ./target/doc/quantbr/roadmap
+
+          # Cria pasta para publicar
           mkdir -p ./doc_publish
-          cp -r ./target/doc/quantbr/* ./doc_publish/
+
+          # Copia o conteúdo limpo do Rustdoc
+          cp -r ./target/doc/quantbr/. ./doc_publish/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -36,3 +42,4 @@ jobs:
           publish_branch: gh-pages
           force_orphan: true
           cname: quantbr.com
+          
