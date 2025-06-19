@@ -1,6 +1,6 @@
-<h1 align="center">quantbr — Open-Source Quantitative Finance Tools in Rust.</h1>
+<h1>quantbr — Open-Source Quantitative Finance Tools in Rust.</h1>
 
-<p align="center">
+<p>
 
 <a href="https://quantbr.com" target="_blank">
   <img src="https://img.shields.io/badge/docs-online-blue" alt="Docs">
@@ -18,13 +18,11 @@
 
 ---
 
-
 ## 🚀 About the Project
 
 `quantbr` is a Rust library designed to provide a suite of tools for quantitative finance. This library aims to facilitate the development of financial applications by offering a modular and idiomatic Rust interface.
 
 ---
-
 
 ## 🧱 Features
 
@@ -45,7 +43,6 @@ Market Microstructure Analysis (order book modeling, slippage, transaction cost 
 
 ---
 
-
 ## 📦 Getting Started
 
 ```bash
@@ -57,7 +54,6 @@ cargo test
 
 ---
 
-
 ## ✨ Example
 
 ```rust
@@ -67,8 +63,8 @@ let period = 14
 let rsi_val = rsi(&data, period);
 println!("RSI: {:?}", rsi_val);
 ```
----
 
+---
 
 ## 📃 Documentation
 
@@ -86,7 +82,6 @@ This project uses [`just`](https://github.com/casey/just) to streamline common d
 
 ---
 
-
 ### 📦 Installing `just`
 
 If you already have Rust:
@@ -100,8 +95,8 @@ Or use a package manager:
 - macOS: `brew install just`
 - Windows: `choco install just` or `cargo install just`
 - Linux: via `cargo` or from the [releases page](https://github.com/casey/just)
+- 
 ---
-
 
 ### 🚀 Available Commands
 
@@ -124,7 +119,6 @@ This will run the default task: `build`, `test`, and `clippy`.
 
 ---
 
-
 ## 🤝 Contributing
 
 We welcome contributions! Add new indicators, models, or enhancements. Please follow Conventional Commits.
@@ -136,14 +130,12 @@ We welcome contributions! Add new indicators, models, or enhancements. Please fo
 
 ---
 
-
 ### ✅ Requirements
 
 - Code must build on Linux and Windows (verified via GitHub Actions)
 - Run `just fmt && just clippy` before opening a PR
 
 ---
-
 
 ## ✍️ Commit Message Format
 
@@ -156,7 +148,6 @@ We follow **Conventional Commits**.
 ```
 
 ---
-
 
 **Common Types:**
 
@@ -182,13 +173,11 @@ ci(clippy): add Clippy static analysis
 
 ---
 
-
 ## 💬 Questions or Ideas?
 
 Open a [Discussion](https://github.com/quantbr/quantbr/discussions) or [Issue](https://github.com/quantbr/quantbr/issues).
 
 ---
-
 
 ## 📜 Code of Conduct
 
@@ -199,7 +188,6 @@ To foster an open and welcoming environment, we as contributors and maintainers 
 For any issues, contact: [brbtavares@outlook.com]
 
 ---
-
 
 ## 📝 License
 
