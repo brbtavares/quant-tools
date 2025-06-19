@@ -1,4 +1,4 @@
-# quantbr — Open-Source Quantitative Finance Tools in Rust.
+# quantbr — Open-Source Quantitative Finance Tools in Rust
 
 [![Docs](https://img.shields.io/badge/docs-online-blue)](https://quantbr.com)
 [![Rust CI](https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg)](https://github.com/quantbr/quantbr/actions/workflows/ci.yml)
@@ -84,7 +84,7 @@ Or use a package manager:
 - macOS: `brew install just`
 - Windows: `choco install just` or `cargo install just`
 - Linux: via `cargo` or from the [releases page](https://github.com/casey/just)
-- 
+
 ---
 
 ### 🚀 Available Commands
