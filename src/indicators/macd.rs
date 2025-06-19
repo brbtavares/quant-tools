@@ -18,9 +18,14 @@ impl MACD {
     pub fn calculate(&self, prices: &[f64]) -> (Vec<f64>, Vec<f64>, Vec<f64>) {
         let short_ema = self.ema(prices, self.short_period);
         let long_ema = self.ema(prices, self.long_period);
-        let macd_line: Vec<f64> = short_ema.iter().zip(long_ema.iter()).map(|(s, l)| s - l).collect();
+        let macd_line: Vec<f64> = short_ema
+            .iter()
+            .zip(long_ema.iter())
+            .map(|(s, l)| s - l)
+            .collect();
         let signal_line = self.ema(&macd_line, self.signal_period);
-        (macd_line, signal_line, self.histogram(&macd_line, &signal_line))
+        let histogram = self.histogram(&macd_line, &signal_line);
+        (macd_line, signal_line, histogram)
     }
 
     fn ema(&self, prices: &[f64], period: usize) -> Vec<f64> {
@@ -36,6 +41,10 @@ impl MACD {
     }
 
     fn histogram(&self, macd_line: &[f64], signal_line: &[f64]) -> Vec<f64> {
-        macd_line.iter().zip(signal_line.iter()).map(|(m, s)| m - s).collect()
+        macd_line
+            .iter()
+            .zip(signal_line.iter())
+            .map(|(m, s)| m - s)
+            .collect()
     }
 }
