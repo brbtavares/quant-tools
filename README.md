@@ -1,20 +1,9 @@
-<h1>quantbr — Open-Source Quantitative Finance Tools in Rust.</h1>
+# quantbr — Open-Source Quantitative Finance Tools in Rust.
 
-<p>
-
-<a href="https://quantbr.com" target="_blank">
-  <img src="https://img.shields.io/badge/docs-online-blue" alt="Docs">
-</a>
-  <a href="https://github.com/quantbr/quantbr/actions/workflows/ci.yml">
-    <img src="https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg" alt="Rust CI">
-  </a>
-  <a href="https://github.com/quantbr/quantbr/actions/workflows/clippy.yml">
-    <img src="https://github.com/quantbr/quantbr/actions/workflows/clippy.yml/badge.svg" alt="Clippy Linter">
-  </a>
-  <a href="https://quantbr.github.io/quantbr">
-    <img src="https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square" alt="Docs">
-  </a>
-</p>
+[![Docs](https://img.shields.io/badge/docs-online-blue)](https://quantbr.com)
+[![Rust CI](https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg)](https://github.com/quantbr/quantbr/actions/workflows/ci.yml)
+[![Clippy Linter](https://github.com/quantbr/quantbr/actions/workflows/clippy.yml/badge.svg)](https://github.com/quantbr/quantbr/actions/workflows/clippy.yml)
+[![Docs mdBook](https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square)](https://quantbr.github.io/quantbr)
 
 ---
 
