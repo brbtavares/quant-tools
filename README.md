@@ -65,46 +65,33 @@ cargo doc --open
 
 ---
 
-## 🔧 Development with Just (`justfile`)
+## 🔧 Development with Make
 
-This project uses [`just`](https://github.com/casey/just) to streamline common development tasks.
-
----
-
-### 📦 Installing `just`
-
-If you already have Rust:
-
-```bash
-cargo install just
-```
-
-Or use a package manager:
-
-- macOS: `brew install just`
-- Windows: `choco install just` or `cargo install just`
-- Linux: via `cargo` or from the [releases page](https://github.com/casey/just)
+This project uses a `Makefile` to streamline common development tasks.  
+No external dependencies are required — `make` is widely available on Linux and macOS.  
+On Windows, you can use it via [WSL](https://learn.microsoft.com/en-us/windows/wsl/), [MSYS2](https://www.msys2.org/), or [Git Bash](https://gitforwindows.org/).
 
 ---
 
 ### 🚀 Available Commands
 
 ```bash
-just             # Runs build, test, clippy
-just build       # Builds the project
-just test        # Runs all tests
-just clippy      # Runs linter (fails on warnings)
-just fmt         # Formats the code
-just check       # Checks code without compiling
+make              # Runs dev: check, test, clippy
+make build        # Builds the project
+make test         # Runs all tests
+make clippy       # Runs linter (fails on warnings)
+make fmt          # Formats the code
+make check        # Checks code without compiling
+make dev          # Runs check, test, clippy (default target)
 ```
 
 💡 You can simply run:
 
 ```bash
-just
+make
 ```
 
-This will run the default task: `build`, `test`, and `clippy`.
+This will run the default `dev` target: `cargo check`, `cargo test`, and `cargo clippy -- -D warnings`.
 
 ---
 
