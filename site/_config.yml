@@ -1,0 +1,11 @@
+title: quantbr
+description: Ferramentas quantitativas para finanças em Rust
+theme: just-the-docs
+
+aux_links:
+  "Docs.rs":
+    - "https://docs.rs/quantbr"
+  "mdBook":
+    - "https://brbtavares.github.io/quantbr-book"
+  "GitHub":
+    - "https://github.com/brbtavares/quantbr"

@@ -31,3 +31,6 @@ dist/
 npm-debug.log*
 .husky/_/
 roadmap/marketing.md
+_site/
+site/_site/
+.jekyll-cache/
