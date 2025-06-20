@@ -39,7 +39,9 @@ jobs:
           bundle exec jekyll build
 
       - name: Build Rust docs
-        run: cargo doc --no-deps -p quantbr
+        run: |
+          rm -rf target/doc
+          cargo doc --no-deps -p quantbr
 
       - name: Build mdBook
         run: mdbook build docs
