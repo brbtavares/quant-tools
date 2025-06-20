@@ -20,15 +20,18 @@ jobs:
           profile: minimal
           override: true
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+
       - name: Install mdBook
         run: cargo install mdbook
 
       - name: Install Jekyll dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          gem install bundler
-          cd site && bundle install
+          cd site
+          bundle install
 
       - name: Build Jekyll site
         run: |
