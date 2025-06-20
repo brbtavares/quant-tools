@@ -28,14 +28,10 @@ jobs:
       - name: Install mdBook
         run: cargo install mdbook
 
-      - name: Install Jekyll dependencies
+      - name: Install and build Jekyll dependencies
         run: |
           cd site
           bundle install
-
-      - name: Build Jekyll site
-        run: |
-          cd site
           bundle exec jekyll build
 
       - name: Build Rust docs
