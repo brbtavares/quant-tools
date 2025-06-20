@@ -1,0 +1,61 @@
+name: Deploy Site + Rust Docs + mdBook
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+
+      - name: Install mdBook
+        run: cargo install mdbook
+
+      - name: Install Jekyll dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full build-essential zlib1g-dev
+          gem install bundler
+          cd site && bundle install
+
+      - name: Build Jekyll site
+        run: |
+          cd site
+          bundle exec jekyll build
+
+      - name: Build Rust docs
+        run: cargo doc --no-deps -p quantbr
+
+      - name: Build mdBook
+        run: mdbook build docs
+
+      - name: Combine outputs
+        run: |
+          mkdir -p site/_site/api
+          mkdir -p site/_site/book
+          cp -r target/doc/. site/_site/api/
+          cp -r docs/book/. site/_site/book/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/_site
+          publish_branch: gh-pages
+          force_orphan: true
+          cname: quantbr.com
+
+      - name: Finalização
+        run: echo "Pipeline finalizado"
