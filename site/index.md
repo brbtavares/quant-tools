@@ -8,8 +8,8 @@ Ferramentas quantitativas para finanças em Rust.
 
 Explore:
 
-- [Docs.rs](https://docs.rs/quantbr)
-- [mdBook](https://seuusuario.github.io/quantbr-book)
+- [Docs.rs](https://quantbr.com/docs)
+- [mdBook](https://quantbr.com/book)
 - [GitHub](https://github.com/brbtavares/quantbr)
 
 ## Exemplo de uso
