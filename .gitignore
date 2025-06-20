@@ -24,13 +24,9 @@ target/
 
 # Additional files to ignore
 docs/
-node_modules/
 .env
 dist/
 .cache/
 npm-debug.log*
-.husky/_/
-roadmap/marketing.md
-_site/
-site/_site/
-.jekyll-cache/
+.husky/
+site/
