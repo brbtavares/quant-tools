@@ -46,7 +46,7 @@ jobs:
         run: |
           mkdir -p site/_site/api
           mkdir -p site/_site/book
-          cp -r target/doc/. site/_site/api/
+          cp -r target/docs/. site/_site/api/
           cp -r docs/book/. site/_site/book/
 
       - name: Deploy to GitHub Pages
