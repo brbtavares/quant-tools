@@ -77,6 +77,7 @@ git clone https://github.com/brbtavares/quantbr.git
 cd quantbr
 cargo build
 cargo test
+```
 
 ---
 
