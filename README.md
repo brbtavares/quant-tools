@@ -1,15 +1,15 @@
-# quantbr — Open-Source Quantitative Finance Library in Rust (QuantLib-inspired)
+# quant-tools — Open-Source Quantitative Finance Library in Rust (QuantLib-inspired)
 
-[![Docs](https://img.shields.io/badge/docs-online-blue)](https://quantbr.com)
-[![Rust CI](https://github.com/quantbr/quantbr/actions/workflows/ci.yml/badge.svg)](https://github.com/quantbr/quantbr/actions/workflows/ci.yml)
-[![Clippy Linter](https://github.com/quantbr/quantbr/actions/workflows/clippy.yml/badge.svg)](https://github.com/quantbr/quantbr/actions/workflows/clippy.yml)
-[![Docs mdBook](https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square)](https://quantbr.github.io/quantbr)
+[![Docs](https://img.shields.io/badge/docs-online-blue)](https://quant-tools.com)
+[![Rust CI](https://github.com/brbtavares/quant-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/brbtavares/quant-tools/actions/workflows/ci.yml)
+[![Clippy Linter](https://github.com/brbtavares/quant-tools/actions/workflows/clippy.yml/badge.svg)](https://github.com/brbtavares/quant-tools/actions/workflows/clippy.yml)
+[![Docs mdBook](https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square)](https://brbtavares.github.io/quant-tools)
 
 ---
 
-## 🌐 About quantbr
+## 🌐 About quant-tools
 
-`quantbr` is an open-source Rust library for **quantitative finance models**, designed to provide high-performance, modular, and idiomatic tools for financial engineering.  
+`quant-tools` is an open-source Rust library for **quantitative finance models**, designed to provide high-performance, modular, and idiomatic tools for financial engineering.  
 
 It serves as a comprehensive framework that integrates models for:
 
@@ -21,14 +21,14 @@ It serves as a comprehensive framework that integrates models for:
 
 The project is inspired by industry standards like QuantLib, but leverages the safety, speed, and modern design of Rust to deliver robust financial components.
 
-Whether you're building pricing engines, risk systems, trading platforms, or research tools, `quantbr` provides a unified foundation for quantitative finance applications.
+Whether you're building pricing engines, risk systems, trading platforms, or research tools, `quant-tools` provides a unified foundation for quantitative finance applications.
 g, yield curve construction, risk measurement, and numerical methods, with the safety and speed of Rust.
 
 ---
 
 ## 🧱 Features
 
-`quantbr` provides a unified suite of quantitative finance models, covering the full spectrum of pricing, forecasting, hedging, risk measurement, and execution foundations.
+`quant-tools` provides a unified suite of quantitative finance models, covering the full spectrum of pricing, forecasting, hedging, risk measurement, and execution foundations.
 
 - **Derivative Pricing**
   - Black-Scholes (closed-form)
@@ -73,8 +73,8 @@ g, yield curve construction, risk measurement, and numerical methods, with the s
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/brbtavares/quantbr.git
-cd quantbr
+git clone https://github.com/brbtavares/quant-tools.git
+cd quant-tools
 cargo build
 cargo test
 ```
@@ -84,7 +84,7 @@ cargo test
 ## ✨ Example
 
 ```rust
-use quantbr::pricing::black_scholes::black_scholes_price;
+use quant-tools::pricing::black_scholes::black_scholes_price;
 
 let s = 100.0;   // spot price
 let k = 100.0;   // strike price
@@ -106,7 +106,7 @@ For detailed documentation on each module, generate the API docs using:
 cargo doc --open
 ```
 
-Or visit the [online documentation](https://quantbr.com).
+Or visit the [online documentation](https://quant-tools.com).
 
 ---
 
@@ -181,7 +181,7 @@ ci(clippy): enforce no warnings in Clippy
 
 ## 💬 Questions or Ideas?
 
-Open a [Discussion](https://github.com/brbtavares/quantbr/discussions) or [Issue](https://github.com/brbtavares/quantbr/issues).
+Open a [Discussion](https://github.com/brbtavares/quant-tools/discussions) or [Issue](https://github.com/brbtavares/quant-tools/issues).
 
 ---
 
