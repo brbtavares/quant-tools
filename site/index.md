@@ -1,10 +1,9 @@
 ---
 layout: home
 nav_order: 1
-title: quantbr
+title: quant-tools
+description: Quantitative Finance Tools in Rust
 ---
-
-Quantitative Finance Tools in Rust.
 
 Explore:
 
