@@ -7,6 +7,6 @@ description: Quantitative Finance Tools in Rust
 
 Explore:
 
-- [Docs](https://quantbr.com/)
-- [Book](https://quantbr.com/book)
-- [GitHub](https://github.com/brbtavares/quantbr)
+- [Docs](https://quant-tools.com/)
+- [Book](https://quant-tools.com/book)
+- [GitHub](https://github.com/brbtavares/quant-tools)
