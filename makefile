@@ -32,7 +32,7 @@ build_site:
 
 build_docs:
 	rm -rf target/doc
-	cargo doc --no-deps -p quantbr
+	cargo doc --no-deps -p quant-tools
 	mdbook build docs
 
 combine_outputs:
