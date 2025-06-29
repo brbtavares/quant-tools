@@ -37,7 +37,7 @@ jobs:
       - name: Build Rust docs
         run: |
           rm -rf target/doc
-          cargo doc --no-deps -p quantbr
+          cargo doc --no-deps -p quant-tools
 
       - name: Build mdBook
         run: mdbook build docs
@@ -46,7 +46,7 @@ jobs:
         run: |
           mkdir -p site/_site/api
           mkdir -p site/_site/book
-          cp -r target/doc/quantbr/. site/_site/api/
+          cp -r target/doc/quant-tools/. site/_site/api/
           cp -r docs/book/. site/_site/book/
 
       - name: Deploy to GitHub Pages
@@ -56,7 +56,7 @@ jobs:
           publish_dir: site/_site
           publish_branch: gh-pages
           force_orphan: true
-          cname: quantbr.com
+          cname: quant-tools.com
 
       - name: Finalização
         run: echo "Pipeline finalizado"
