@@ -29,6 +29,5 @@ dist/
 .cache/
 npm-debug.log*
 .husky/
-site/
 package.json
 package-lock.json
