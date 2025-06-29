@@ -1,76 +1,77 @@
-# quant-tools — Open-Source Quantitative Finance Library in Rust (QuantLib-inspired)
+# quant-tools — Ferramenta Quantitativa Open-Source para a B3 (em Rust)
 
 [![Docs](https://img.shields.io/badge/docs-online-blue)](https://quant-tools.com)
 [![Rust CI](https://github.com/brbtavares/quant-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/brbtavares/quant-tools/actions/workflows/ci.yml)
 [![Clippy Linter](https://github.com/brbtavares/quant-tools/actions/workflows/clippy.yml/badge.svg)](https://github.com/brbtavares/quant-tools/actions/workflows/clippy.yml)
 [![Docs mdBook](https://img.shields.io/badge/docs-mdBook-blue?logo=githubpages&style=flat-square)](https://brbtavares.github.io/quant-tools)
 
----
-
-## 🌐 About quant-tools
-
-`quant-tools` is an open-source Rust library for **quantitative finance models**, designed to provide high-performance, modular, and idiomatic tools for financial engineering.  
-
-It serves as a comprehensive framework that integrates models for:
-
-- **Pricing** of derivatives and structured products
-- **Forecasting** of asset prices, volatility, and risk factors
-- **Hedging** strategies and optimal replication techniques
-- **Risk measurement** including exposure analysis and scenario testing
-- **Execution** models for market microstructure and trading algorithms  
-
-The project is inspired by industry standards like QuantLib, but leverages the safety, speed, and modern design of Rust to deliver robust financial components.
-
-Whether you're building pricing engines, risk systems, trading platforms, or research tools, `quant-tools` provides a unified foundation for quantitative finance applications.
-g, yield curve construction, risk measurement, and numerical methods, with the safety and speed of Rust.
+> 📄 Este README também está disponível em [English](./README.en.md)
 
 ---
 
-## 🧱 Features
+## 🌐 Sobre o projeto
 
-`quant-tools` provides a unified suite of quantitative finance models, covering the full spectrum of pricing, forecasting, hedging, risk measurement, and execution foundations.
+`quant-tools` é uma biblioteca open-source em Rust para **backtesting e simulação de estratégias quantitativas no mercado brasileiro (B3)**. O projeto é focado em desempenho, segurança e reprodutibilidade, com arquitetura modular e extensível.
 
-- **Derivative Pricing**
-  - Black-Scholes (closed-form)
-  - Binomial and Trinomial trees
-  - Monte Carlo simulation (planned)
-  - Stochastic processes: GBM, Heston, Hull-White, CIR, Vasicek (planned)
+A biblioteca atualmente é especializada em ativos negociados na B3:
 
-- **Interest Rate & Yield Curves**
-  - Term structure of interest rates
-  - Discount curves, forward curves
-  - Piecewise and spline interpolation (planned)
-
-- **Fixed Income Instruments**
-  - Bonds, swaps
-  - Cash flow models (fixed and floating rate)
-  - Day count conventions, business day adjustment
-
-- **Risk Models & Metrics**
-  - Duration, convexity
-  - Value-at-Risk (VaR), Conditional VaR (CVaR) (planned)
-  - Scenario analysis (planned)
-
-- **Forecasting & Time Series Tools**
-  - OHLC series types and helpers
-  - Volatility estimators (historical, EWMA - planned)
-  - Foundations for ARIMA, GARCH (planned)
-
-- **Hedging & Replication**
-  - Delta, gamma hedging (planned)
-  - Optimal hedge ratio calculators (planned)
-
-- **Numerical Methods**
-  - Root-finding algorithms
-  - Integration routines
-  - Finite difference grids (planned)
-
-- **Calendars**
-  - Business calendars and holiday adjustments
+- **Ações**
+- **Contratos futuros** (índice, dólar)
+- **Opções** (negociadas via B3)
+- **ETFs e FIIs**
 
 ---
 
-## 📦 Getting Started
+## ✨ Funcionalidades
+
+- ✅ Simulação de estratégias com dados OHLC (candlestick)
+- ✅ Engine de execução de ordens com suporte a compra/venda
+- ✅ Métricas de avaliação (PnL, retorno, drawdown, Sharpe etc.)
+- 🟡 Carga e tratamento de dados históricos da B3 (em andamento)
+- 🟡 Cálculo de ajustes diários para futuros
+- 🟡 Simulação de proventos (dividendos, JCP)
+- 🟡 Apuração de IRRF sobre lucros operacionais
+- 🟡 Suporte a estruturas com opções (travas, borboletas)
+
+---
+
+## 🔍 Roadmap
+
+| Status | Recurso                                                             |
+| ------ | ------------------------------------------------------------------- |
+| ✅      | Engine de backtest com candles diários/intradiários                 |
+| ✅      | Estratégias básicas (ex: cruzamento de médias)                      |
+| 🔜      | Parser de arquivos históricos da B3 (ex: arquivos BVMF, corretoras) |
+| 🔜      | Execução realista com slippage e custo                              |
+| 🔜      | Análise de operações com IR e custos                                |
+| 🔜      | Visualização de resultados e métricas                               |
+| 🔜      | Módulo de opções com múltiplas pernas                               |
+
+---
+
+## 🧱 Estrutura do Projeto
+
+```text
+quant-tools/
+├── core/         # Motor de simulação e métricas
+├── data/         # Abstrações de dados de mercado
+├── b3/           # Lógica específica da B3 (ajustes, proventos etc.)
+├── strategies/   # Estratégias implementadas
+├── examples/     # Casos de uso
+└── cli/          # Interface de linha de comando
+```
+
+---
+
+## 🚀 Tecnologias
+
+- **Rust**: alta performance, segurança de memória e concorrência eficiente
+- Arquitetura modular com possibilidade de extensão futura (ex: Forex, cripto)
+- Testes automatizados com CI, Clippy e integração contínua
+
+---
+
+## 📦 Como começar
 
 ```bash
 git clone https://github.com/brbtavares/quant-tools.git
@@ -81,116 +82,68 @@ cargo test
 
 ---
 
-## ✨ Example
+## 💡 Exemplo simples
 
 ```rust
-use quant-tools::pricing::black_scholes::black_scholes_price;
+use quant_tools::pricing::black_scholes::black_scholes_price;
 
-let s = 100.0;   // spot price
-let k = 100.0;   // strike price
-let r = 0.05;    // risk-free rate
-let sigma = 0.2; // volatility
-let t = 1.0;     // time to maturity
+let s = 100.0;   // preço do ativo
+let k = 100.0;   // strike
+let r = 0.05;    // taxa livre de risco
+let sigma = 0.2; // volatilidade
+let t = 1.0;     // tempo até o vencimento (em anos)
 
 let call_price = black_scholes_price(s, k, r, sigma, t, true);
-println!("Call option price: {:.4}", call_price);
+println!("Preço da call: {:.4}", call_price);
 ```
 
 ---
 
-## 📃 Documentation
+## 📚 Documentação
 
-For detailed documentation on each module, generate the API docs using:
+Para gerar a documentação da API localmente:
 
 ```bash
 cargo doc --open
 ```
 
-Or visit the [online documentation](https://quant-tools.com).
+Ou acesse a [documentação online](https://quant-tools.com).
 
 ---
 
-## 🔧 Development with Make
+## 🔧 Desenvolvimento com Make
 
 ```bash
-make              # Runs dev: check, test, clippy
-make build        # Builds the project
-make test         # Runs all tests
-make clippy       # Runs linter (fails on warnings)
-make fmt          # Formats the code
-make check        # Checks code without compiling
-make dev          # Runs check, test, clippy (default target)
-```
-
-Run `make` to execute the default `dev` workflow.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions of new models, numerical routines, documentation, or examples!
-
-1. Fork the repo and clone your fork.
-2. Create a branch: `git checkout -b feat/your-feature`
-3. Use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
-4. Push and open a Pull Request (PR) to `master`.
-
----
-
-### ✅ Requirements
-
-- Code must build on Linux and Windows (via CI)
-- Run `make fmt && make clippy` before opening a PR
-
----
-
-## ✍️ Commit Message Format
-
-**Format:**
-
-```bash
-<type>(optional-scope): short description
+make              # Executa dev: check, test, clippy
+make build        # Compila o projeto
+make test         # Roda todos os testes
+make clippy       # Executa linter (com erro em warnings)
+make fmt          # Formata o código
+make check        # Verifica erros sem compilar
+make dev          # Atalho para check + test + clippy
 ```
 
 ---
 
-**Common Types:**
+## 🤝 Contribuindo
 
-| Type     | Description                                    |
-| -------- | ---------------------------------------------- |
-| feat     | New feature                                    |
-| fix      | Bug fix                                        |
-| docs     | Documentation updates                          |
-| style    | Code style changes                             |
-| refactor | Code changes that neither fix nor add features |
-| test     | Adding or updating tests                       |
-| chore    | Build process, tooling, or dependencies        |
-| ci       | CI/CD workflow changes                         |
+Contribuições são bem-vindas!  
+Modelos, rotinas numéricas, exemplos ou melhorias na documentação — toda ajuda é valiosa.
 
-**Examples:**
-
-```bash
-feat(pricing): add Black-Scholes option pricing
-fix(yield): correct interpolation on forward curve
-docs: update README with example usage
-ci(clippy): enforce no warnings in Clippy
-
-```
+1. Faça um fork e clone o repositório.
+2. Crie uma branch: `git checkout -b feat/nome-da-feature`
+3. Use o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/)
+4. Abra um Pull Request para `master`.
 
 ---
 
-## 💬 Questions or Ideas?
+### ✅ Requisitos
 
-Open a [Discussion](https://github.com/brbtavares/quant-tools/discussions) or [Issue](https://github.com/brbtavares/quant-tools/issues).
-
----
-
-## 📜 Code of Conduct
-
-We follow the [Contributor Covenant](https://www.contributor-covenant.org) v2.1.
+- O código deve compilar no Linux e Windows (CI automatizada)
+- Rode `make fmt && make clippy` antes de enviar o PR
 
 ---
 
-## 📝 License
+## 📝 Licença
 
-Licensed under the [Apache 2.0 License](LICENSE).
+Licenciado sob a [Licença Apache 2.0](LICENSE).
