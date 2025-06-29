@@ -38,7 +38,7 @@ build_docs:
 combine_outputs:
 	mkdir -p site/_site/api
 	mkdir -p site/_site/book
-	cp -r target/doc/. site/_site/api/
+	cp -r target/doc/quant_tools/. site/_site/api/
 	cp -r docs/book/. site/_site/book/
 
 deploy:
