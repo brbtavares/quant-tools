@@ -1,5 +1,5 @@
 [package]
-name = "quantbr"
+name = "quant-tools"
 version = "0.1.0"
 edition = "2024"
 
