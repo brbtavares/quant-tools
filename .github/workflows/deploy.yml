@@ -37,7 +37,7 @@ jobs:
       - name: Build Rust docs
         run: |
           rm -rf target/doc
-          cargo doc --no-deps -p quant-tools
+          cargo doc --no-deps
 
       - name: Build mdBook
         run: mdbook build docs
