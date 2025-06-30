@@ -2,5 +2,11 @@
 name = "quant-tools"
 version = "0.1.0"
 edition = "2024"
+authors = ["brbtavares <brbtavares@outlook.com>"]
+description = "Biblioteca Rust para ferramentas quantitativas no mercado financeiro brasileiro."
+license = "Apache-2.0"
+repository = "https://github.com/brbtavares/quant-tools"
 
 [dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
